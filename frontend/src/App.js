@@ -12,12 +12,14 @@ import Tickets from "./Pages/Tickets/Index"
 import MyRefund from "./Pages/MyRefund/Index"
 import PageNotFound from './Pages/PageNotFound/Index';
 import { CssBaseline } from '@mui/material';
+import FAQ from './Pages/FAQ/Index';
+import Application from './Pages/Application/Index';
 function App() {
   const token = true
   return (
     <>
       {token ? <LoginHeader /> : <Header />}
-      
+      <CssBaseline/>
       <Routes>
         <Route exact path='/' element={token ? <Navigate to="/market" /> : <Home />} />
         <Route path='/market' element={token ? <Market /> : <Navigate to="/" />} />
@@ -26,6 +28,9 @@ function App() {
         <Route path='/myWallet' element={token ? <MyWallet /> : < Navigate to="/" />} />
         <Route path='/orders' element={token ? <Orders /> : < Navigate to="/" />} />
         <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
+        <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
+        <Route path='/application' element={<Application/>} />
+        <Route path='/faq' element={<FAQ/>} />
         <Route path='*' element ={<PageNotFound/>}/>
       </Routes>
       {token ? null : <Footer />}

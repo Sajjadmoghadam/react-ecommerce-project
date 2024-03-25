@@ -1,12 +1,11 @@
 import React from 'react';
 
-const PageNotFound = () => {
+const FAQ = () => {
     return (
         <div>
-            
             
         </div>
     );
 }
 
-export default PageNotFound;
+export default FAQ;
