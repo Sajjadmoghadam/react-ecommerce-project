@@ -1,10 +1,11 @@
+import { Stack } from '@mui/material';
 import React from 'react';
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <Stack height={'100vh'}>
+
+        </Stack>
     );
 }
 
