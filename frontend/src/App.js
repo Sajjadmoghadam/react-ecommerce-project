@@ -11,15 +11,32 @@ import Orders from "./Pages/Orders/Index"
 import Tickets from "./Pages/Tickets/Index"
 import MyRefund from "./Pages/MyRefund/Index"
 import PageNotFound from './Pages/PageNotFound/Index';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import FAQ from './Pages/FAQ/Index';
 import Application from './Pages/Application/Index';
 function App() {
-  const token = true
+
+  const token = false
+  const theme = createTheme({
+    palette:{
+      primary: {
+        main:"#009900"
+      },
+
+      secondary:{
+        main:"#9c"
+      }
+    },
+    typography:{fontFamily:'Yekan'},
+    direction: 'rtl'
+  })
+
+  
   return (
     <>
-      {token ? <LoginHeader /> : <Header />}
       <CssBaseline/>
+      <ThemeProvider theme={theme}>
+      {token ? <LoginHeader /> : <Header />}
       <Routes>
         <Route exact path='/' element={token ? <Navigate to="/market" /> : <Home />} />
         <Route path='/market' element={token ? <Market /> : <Navigate to="/" />} />
@@ -34,6 +51,7 @@ function App() {
         <Route path='*' element ={<PageNotFound/>}/>
       </Routes>
       {token ? null : <Footer />}
+      </ThemeProvider>
     </>
   );
 }
