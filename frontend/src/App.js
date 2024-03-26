@@ -27,7 +27,13 @@ function App() {
         main:"#9c"
       }
     },
-    typography:{fontFamily:'Yekan'},
+    typography:{
+      fontFamily:'Yekan',
+      allVariants:{
+        color:'#fff'
+      }
+  },
+
     direction: 'rtl'
   })
 
