@@ -4,7 +4,7 @@ import React from 'react';
 const Home = () => {
     return (
         <Stack height={'100vh'}>
-
+            
         </Stack>
     );
 }
