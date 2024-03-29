@@ -1,0 +1,9 @@
+.login-span{
+    color: rgb(13,157,13) !important
+}
+@media screen and (max-width:480px) {
+    .plate{
+        width:  500px;
+    }
+    
+}
