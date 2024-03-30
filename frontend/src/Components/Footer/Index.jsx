@@ -36,8 +36,8 @@ const Footer = () => {
                                 <Typography variant='h3' fontSize={'21px'}>درباره تازه بار</Typography>
                                 <Typography textAlign={'justify'} >همه ما می‌دانیم که یک غذای خوب از مواد اولیه تازه و با کیفیت تهیه می‌شود و تازه بار اولین پلتفرم B2B با هدف تهیه محصولات تازه در ایران است که مواد اولیه رستواران‌، فست‌فود، کافی‌شاپ و آشپزخانه‌ها و همچنین مشتریان خانگی را به صورت مستقیم از کشاورزان تامین و در نهایت رعایت پروتکل‌های بهداشتی به مشتریان خود ارائه می‌کند.</Typography>
                                 <Stack flexDirection={"row"} gap={2} flexWrap={'wrap'}>
-                                    <Button sx={{ color: "#FFF" }} startIcon={<PhoneEnabledIcon />} >021-86121307</Button>
-                                    <Button sx={{ color: "#FFF" }} startIcon={<EmailIcon />}>info@tazebar.com</Button>
+                                    <Button sx={{ color: "#000" }} startIcon={<PhoneEnabledIcon />} >021-86121307</Button>
+                                    <Button sx={{ color: "#000" }} startIcon={<EmailIcon />}>info@tazebar.com</Button>
                                 </Stack>
                             </Stack>
                         </Grid>
@@ -45,9 +45,9 @@ const Footer = () => {
                             <Stack spacing={2}>
                                 <Typography variant='h3' fontSize={'21px'}>بیشتر بدانید</Typography>
                                 <Stack>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>درباره ما</Button>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>تماس با ما </Button>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>پرسش های متداول</Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>درباره ما</Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>تماس با ما </Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>پرسش های متداول</Button>
                                 </Stack>
                             </Stack>
                         </Grid>
@@ -55,9 +55,9 @@ const Footer = () => {
                             <Stack spacing={2}>
                                 <Typography variant='h3' fontSize={'21px'}>صفحات ما</Typography>
                                 <Stack>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>ثبت شکایات</Button>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>حریم خصوصی</Button>
-                                    <Button sx={{ color: "#FFF", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>قوانین و مقررات</Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>ثبت شکایات</Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>حریم خصوصی</Button>
+                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>قوانین و مقررات</Button>
                                 </Stack>
                             </Stack>
                         </Grid>

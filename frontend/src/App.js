@@ -30,7 +30,7 @@ function App() {
     typography:{
       fontFamily:'Yekan',
       allVariants:{
-        color:'#fff'
+        color:'#000'
       }
   },
 
