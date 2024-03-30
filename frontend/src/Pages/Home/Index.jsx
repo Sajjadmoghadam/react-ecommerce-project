@@ -1,4 +1,4 @@
-import { InputAdornment, Stack, TextField, Typography, Button, Divider, Chip } from '@mui/material';
+import { InputAdornment, Stack, TextField, Typography, Button, Divider, Chip, Box } from '@mui/material';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import LockIcon from '@mui/icons-material/Lock';
 import React, { useRef } from 'react';
@@ -101,6 +101,16 @@ const Home = () => {
                         <Chip label="آبمیوه فروشی"/>
                     </Stack>
                 </Stack>
+            </Stack>
+            <Stack width={"100%"} height={"400px"} sx={{backgroundImage:"url('assets/image/newsletter.png')" , backgroundRepeat:"no-repeat", backgroundSize:"cover",backgroundPosition: 'center',}} justifyContent={"center"} alignItems={"center"}>
+                    <Stack width={"70%"} minHeight={"76px"} sx={{backgroundColor:"rgba(255 ,255 ,255, 0.8)",borderRadius:"8px"}} flexDirection={{lg:"row",xs:"column"}} alignItems={"center"} justifyContent={"space-between"}p={2} gap={2}>
+                            <Box>
+                                <Typography variant='h1' fontSize={"21px"}>برای استفاده از خدمات تازه بار همین الان به صورت رایگان ثبت نام کنید</Typography>
+                            </Box>
+                            <Box>
+                                <Button onClick={()=>greenContainer.current?.scrollIntoView({ behavior: 'smooth' })} variant='contained' size='large' sx={{bgcolor:"#000"}}>شروع ثبت نام</Button>
+                            </Box>
+                    </Stack>
             </Stack>
         </>
     );
