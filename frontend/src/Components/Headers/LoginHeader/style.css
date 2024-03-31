@@ -1,0 +1,10 @@
+.market-icon{
+    width: 40px;
+}
+
+.header-search input{
+    padding: 0 !important;
+    height: 40px !important;
+    padding-inline: 10px !important;
+
+}

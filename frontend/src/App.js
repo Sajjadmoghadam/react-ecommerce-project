@@ -14,9 +14,11 @@ import PageNotFound from './Pages/PageNotFound/Index';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import FAQ from './Pages/FAQ/Index';
 import Application from './Pages/Application/Index';
+import AuthContext from './utils/AuthContext';
+import { useState } from 'react';
 function App() {
 
-  const token = false
+  
   const theme = createTheme({
     palette:{
       primary: {
@@ -37,11 +39,16 @@ function App() {
     direction: 'rtl'
   })
 
+  const [token ,setToken]=useState('2')
+  const handleToken=(e)=>{
+    setToken(e)
+  }
   
   return (
     <>
       <CssBaseline/>
       <ThemeProvider theme={theme}>
+      <AuthContext.Provider  value={{token,handleToken}} >
       {token ? <LoginHeader /> : <Header />}
       <Routes>
         <Route exact path='/' element={token ? <Navigate to="/market" /> : <Home />} />
@@ -57,6 +64,7 @@ function App() {
         <Route path='*' element ={<PageNotFound/>}/>
       </Routes>
       {token ? null : <Footer />}
+      </AuthContext.Provider>
       </ThemeProvider>
     </>
   );
