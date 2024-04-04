@@ -1,0 +1,24 @@
+.myCustomers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.myCustomers .swiper-wrapper {
+  display: flex;
+}
+
+.myCustomers .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myCustomers .swiper-slide img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

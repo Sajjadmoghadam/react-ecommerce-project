@@ -1,4 +1,4 @@
-import { Button, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material';
+import { Button, IconButton, InputAdornment, Link, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
@@ -13,9 +13,9 @@ const LoginHeader = () => {
     return (
     <>
     
-    <Stack flexDirection={"row"} justifyContent={"space-between"} display={{md:"flex",xs:"none"}} height={"71px"} border={"1px solid #e5e5e5"} alignItems={"center"}>
+    <Stack flexDirection={"row"} justifyContent={"space-between"} display={{md:"flex",xs:"none"}} height={"71px"} border={"1px solid #e5e5e5"} alignItems={"center"} position={"absolute"} top={0} right={0} left={0} zIndex={2}>
         <Stack flexDirection={"row"} alignItems={"center"}>
-            <Stack width={"71px"}  alignItems={"center"} borderRight={"1px solid #e5e5e5"}><Button><img className='market-icon' src="assets/image/icon.svg" alt="" /></Button></Stack>
+            <Stack width={"71px"}  alignItems={"center"} borderRight={"1px solid #e5e5e5"}><Button><Link href="/market"><img className='market-icon' src="assets/image/icon.svg" alt="" /></Link></Button></Stack>
             <Stack px={1}><Typography>0 تومان</Typography>
             <Button size='small' startIcon={<AddBoxRoundedIcon/>}>افزایش موجودی</Button></Stack>
         </Stack>
