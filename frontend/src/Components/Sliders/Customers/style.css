@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: row;
 }
-
-.marketSlider .swiper-wrapper {
-    display: flex;
+.swiper-wrapper {
+    display: flex !important;
 }
 
 .marketSlider .swiper-slide {
     text-align: center;
+    width: 200px !important;
     display: flex;
     justify-content: center;
     align-items: center;

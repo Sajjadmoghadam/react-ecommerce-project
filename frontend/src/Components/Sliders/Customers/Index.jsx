@@ -8,6 +8,7 @@ export default function Customers() {
         <>
 
             <Swiper
+                defaultValue={6}
                 breakpoints={{
                     1200:{
                         slidesPerView:6
@@ -35,7 +36,6 @@ export default function Customers() {
                 <SwiperSlide><img src="assets/image/customers/5.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="assets/image/customers/6.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="assets/image/customers/7.jpg" alt="" /></SwiperSlide>
-                <SwiperSlide><img src="assets/image/customers/8.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="assets/image/customers/9.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="assets/image/customers/10.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="assets/image/customers/11.jpg" alt="" /></SwiperSlide>
