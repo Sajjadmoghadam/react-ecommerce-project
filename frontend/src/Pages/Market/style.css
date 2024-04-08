@@ -2,3 +2,13 @@
     max-height: 90vh;
     overflow-y: auto;
 }
+.productConainer{
+    overflow-y: scroll !important;
+    height: 100% !important;
+}
+.cartProductImg{
+    width: 120px;
+}
+.mobile-category{
+    width: 80px;
+}

@@ -1,14 +1,12 @@
-.marketSlider {
+.myCustomers {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
 }
-.swiper-wrapper {
-    display: flex !important;
-}
 
-.marketSlider .swiper-slide {
+
+.myCustomers > .swiper-slide {
     text-align: center;
     width: 200px !important;
     display: flex;
@@ -16,7 +14,7 @@
     align-items: center;
 }
 
-.marketSlider .swiper-slide img {
+.myCustomers > .swiper-slide img {
     display: flex;
     width: 100%;
     height: 100%;
