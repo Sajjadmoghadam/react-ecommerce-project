@@ -16,6 +16,7 @@ import FAQ from './Pages/FAQ/Index';
 import Application from './Pages/Application/Index';
 import AuthContext from './utils/AuthContext';
 import { useState } from 'react';
+import Dashboard from './Pages/Dashboard/Index';
 function App() {
 
   
@@ -57,6 +58,7 @@ function App() {
         <Route path='/myrefund' element={token ? <MyRefund /> : < Navigate to="/" />} />
         <Route path='/myWallet' element={token ? <MyWallet /> : < Navigate to="/" />} />
         <Route path='/orders' element={token ? <Orders /> : < Navigate to="/" />} />
+        <Route path='/dashboard' element={token ? <Dashboard /> : < Navigate to="/" />} />
         <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
         <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
         <Route path='/application' element={<Application/>} />
