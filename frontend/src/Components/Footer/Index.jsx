@@ -33,31 +33,31 @@ const Footer = () => {
 
                         <Grid item lg={4} xs={12} p={"12px"} >
                             <Stack spacing={2}>
-                                <Typography variant='h3' fontSize={'21px'}>درباره تازه بار</Typography>
-                                <Typography textAlign={'justify'} >همه ما می‌دانیم که یک غذای خوب از مواد اولیه تازه و با کیفیت تهیه می‌شود و تازه بار اولین پلتفرم B2B با هدف تهیه محصولات تازه در ایران است که مواد اولیه رستواران‌، فست‌فود، کافی‌شاپ و آشپزخانه‌ها و همچنین مشتریان خانگی را به صورت مستقیم از کشاورزان تامین و در نهایت رعایت پروتکل‌های بهداشتی به مشتریان خود ارائه می‌کند.</Typography>
+                                <Typography variant='h3' fontSize={'21px'} color={"#fff"}>درباره تازه بار</Typography>
+                                <Typography textAlign={'justify'} color={"#fff"} >همه ما می‌دانیم که یک غذای خوب از مواد اولیه تازه و با کیفیت تهیه می‌شود و تازه بار اولین پلتفرم B2B با هدف تهیه محصولات تازه در ایران است که مواد اولیه رستواران‌، فست‌فود، کافی‌شاپ و آشپزخانه‌ها و همچنین مشتریان خانگی را به صورت مستقیم از کشاورزان تامین و در نهایت رعایت پروتکل‌های بهداشتی به مشتریان خود ارائه می‌کند.</Typography>
                                 <Stack flexDirection={"row"} gap={2} flexWrap={'wrap'}>
-                                    <Button sx={{ color: "#000" }} startIcon={<PhoneEnabledIcon />} >021-86121307</Button>
-                                    <Button sx={{ color: "#000" }} startIcon={<EmailIcon />}>info@tazebar.com</Button>
+                                    <Button sx={{ color: "#fff" }} startIcon={<PhoneEnabledIcon />} >021-86121307</Button>
+                                    <Button sx={{ color: "#fff" }} startIcon={<EmailIcon />}>info@tazebar.com</Button>
                                 </Stack>
                             </Stack>
                         </Grid>
                         <Grid item lg={2} sm={4} xs={6} p={"12px"}>
                             <Stack spacing={2}>
-                                <Typography variant='h3' fontSize={'21px'}>بیشتر بدانید</Typography>
+                                <Typography variant='h3' fontSize={'21px'} color={"#fff"}>بیشتر بدانید</Typography>
                                 <Stack>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>درباره ما</Button>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>تماس با ما </Button>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>پرسش های متداول</Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>درباره ما</Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>تماس با ما </Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>پرسش های متداول</Button>
                                 </Stack>
                             </Stack>
                         </Grid>
                         <Grid item lg={2} sm={4} xs={6} p={"12px"}>
                             <Stack spacing={2}>
-                                <Typography variant='h3' fontSize={'21px'}>صفحات ما</Typography>
+                                <Typography variant='h3' fontSize={'21px'} color={"#fff"}>صفحات ما</Typography>
                                 <Stack>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>ثبت شکایات</Button>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>حریم خصوصی</Button>
-                                    <Button sx={{ color: "#000", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>قوانین و مقررات</Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>ثبت شکایات</Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>حریم خصوصی</Button>
+                                    <Button sx={{ color: "#fff", alignSelf: 'flex-start' }} startIcon={<ArrowBackIosNewIcon />}>قوانین و مقررات</Button>
                                 </Stack>
                             </Stack>
                         </Grid>
@@ -73,11 +73,11 @@ const Footer = () => {
                             <Divider variant='middle' />
                             <Stack flexDirection={{md:'row',xs:'column'}} alignItems={"center"} justifyContent={"space-between"} marginTop={2}>
                                 <Stack>
-                                    <Typography>کلیه حقوق مادی و معنوی این سایت برای شرکت مانا تجارت تازه بار محفوظ می‌باشد.</Typography>
+                                    <Typography color={"#fff"}>کلیه حقوق مادی و معنوی این سایت برای شرکت مانا تجارت تازه بار محفوظ می‌باشد.</Typography>
                                 </Stack>
                                 <Stack flexDirection={"row"} alignItems={"center"}>
                                     <Stack>
-                                        <Typography>همراه ما باشید:</Typography>
+                                        <Typography color={"#fff"}>همراه ما باشید:</Typography>
                                     </Stack>
                                     <Stack flexDirection={"row"}>
                                         <IconButton>
