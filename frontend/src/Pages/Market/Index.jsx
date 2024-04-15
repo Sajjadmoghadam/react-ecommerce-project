@@ -13,19 +13,22 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import './style.css'
 
 
+
 const Market = () => {
 
     const [category, setCategory] = useState('all')
     const [products, setProducts] = useState()
-    // let cards =  products.map(e=> <Card title={e.title} price={e.price} image={e.image} />)
 
 
     useEffect(() => {
 
         if (category === 'all') {
-            fetch('https://fakestoreapi.com/products')
+            fetch('http://localhost:5000/products')
                 .then(res => res.json())
-                .then(data => setProducts(data))
+                .then(data => {
+                    
+                    setProducts(data.data)
+                })
 
 
         } else {
@@ -38,7 +41,10 @@ const Market = () => {
 
             })
                 .then(res => res.json())
-                .then(data => setProducts(data))
+                .then(data => {
+                    setProducts(data.data)
+                })
+
 
 
         }
@@ -47,6 +53,7 @@ const Market = () => {
     }, [category])
 
 
+                  let  cards =  products?.map(e=> <ProductCard title={e.name} price={e.price} image={e.image} />)
 
     return (
         <>
@@ -71,15 +78,7 @@ const Market = () => {
                         <Box width={"97%"} >
                             <MarketSlider />
                         </Box>
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        {cards}
                     </Grid>
                     <Grid item lg={"4"} md={"5"} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"center"} className='zero'>
                         <Stack position={"relative"} component={Paper} height={"95%"} width={"90%"} sx={{ borderRadius: "10px 10px 0px 0px" }} overflow={"hidden"}>
@@ -158,15 +157,8 @@ const Market = () => {
                 </Stack>
                 <Stack>
                     <Stack flexDirection={"row"} flexWrap={"wrap"} gap={1} justifyContent={"center"} p={2}>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
+                     
+                     {cards}
 
                     </Stack>
                 </Stack>
