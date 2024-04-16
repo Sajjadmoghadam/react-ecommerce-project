@@ -11,6 +11,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import './style.css'
+import { useSelector } from 'react-redux';
+import CartCard from '../../Components/CartCard/Index';
 
 
 
@@ -26,7 +28,7 @@ const Market = () => {
             fetch('http://localhost:5000/products')
                 .then(res => res.json())
                 .then(data => {
-                    
+
                     setProducts(data.data)
                 })
 
@@ -52,8 +54,18 @@ const Market = () => {
 
     }, [category])
 
+    let cards = products?.map(e => <ProductCard product={e} />)
 
-                  let  cards =  products?.map(e=> <ProductCard title={e.name} price={e.price} image={e.image} />)
+    const cartLength = useSelector(state=>state.cart.cartList)
+    let totalPrice = 0
+    cartLength.map(e=>{
+        totalPrice += (e.price * e.quantity)
+    }) 
+
+    const cart = useSelector(state=>state.cart.cartList).map(e=>{
+       return <CartCard product={e}/>
+    })
+    console.log(cart);
 
     return (
         <>
@@ -74,45 +86,30 @@ const Market = () => {
 
                 </Stack>
                 <Grid container bgcolor={"#F3F7F8"} style={{ width: 'calc(100% - 72px)' }}>
-                    <Grid item lg={'8'} md={"7"} py={1} display={"flex"} flexWrap={"wrap"} gap={1} justifyContent={"center"} className='productConainer' >
+                    <Grid item lg={8} md={7} py={1} display={"flex"} flexWrap={"wrap"} gap={1} justifyContent={"center"} className='productConainer' >
                         <Box width={"97%"} >
                             <MarketSlider />
                         </Box>
                         {cards}
                     </Grid>
-                    <Grid item lg={"4"} md={"5"} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"center"} className='zero'>
+                    <Grid item lg={4} md={5} display={"flex"} flexDirection={"row"} alignItems={"center"} justifyContent={"center"} className='zero'>
                         <Stack position={"relative"} component={Paper} height={"95%"} width={"90%"} sx={{ borderRadius: "10px 10px 0px 0px" }} overflow={"hidden"}>
                             <Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"} bgcolor={"primary.main"} p={1} px={3} >
                                 <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
                                     <InventoryIcon fontSize='large' sx={{ color: "white" }} />
-                                    <Typography sx={{ color: "white" }}>1 محصول</Typography>
+                                    <Typography sx={{ color: "white" }}> {cartLength.length} محصول</Typography>
                                 </Stack>
                                 <Stack>
-                                    <Typography fontSize={"21px"} sx={{ color: "white" }}>1000 تومان</Typography>
+                                    <Typography fontSize={"21px"} sx={{ color: "white" }}>{totalPrice} تومان</Typography>
                                 </Stack>
                             </Stack>
                             <Stack height={"100%"} >
-                                <Stack flexDirection={"row"} p={1} alignItems={"center"} sx={{ borderBottom: "1px solid #e5e5e5" }}>
-                                    <Stack><img className='cartProductImg' src="/assets/image/55.jpg" alt="" /></Stack>
-                                    <Stack width={"100%"}>
-                                        <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} >
-                                            <Typography>گوجه فرنگی بوته‌ای سبد 14 کیلویی</Typography>
-                                            <IconButton><CancelIcon color='error' /></IconButton>
-                                        </Stack>
-                                        <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"}>
-                                            <Stack sx={{ bgcolor: "black" }} flexDirection={"row"} borderRadius={"10px"} alignItems={"center"}>
-                                                <IconButton ><AddBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
-                                                <Typography textAlign={"center"} sx={{ backgroundColor: "white", width: "20px" }}>1</Typography>
-                                                <IconButton><IndeterminateCheckBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
-                                            </Stack>
-                                            <Typography className='login-span'>28800 تومان</Typography>
-                                        </Stack>
-                                    </Stack>
-                                </Stack>
+
+                                {cart}
 
                             </Stack>
                             <Stack>
-                                <Button variant='contained' size='large' sx={{ bgcolor: "black", borderRadius: "0" }}>ثبت سفارش 256000 تومان</Button>
+                                <Button variant='contained' size='large' sx={{ bgcolor: "black", borderRadius: "0" }}>ثبت سفارش {totalPrice} تومان</Button>
                             </Stack>
 
                         </Stack>
@@ -132,38 +129,37 @@ const Market = () => {
                     </Stack>
                 </Stack>
                 <Stack>
-                    <MarketSlider/>
+                    <MarketSlider />
                 </Stack>
                 <Stack flexDirection={"row"} width={"100%"} gap={1} px={2}>
-                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("food")} sx={{cursor:"pointer"}}>
+                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("food")} sx={{ cursor: "pointer" }}>
                         <img className='mobile-category' src="/assets/image/mobilecategoryimage/1.png" alt="" />
                         <Typography fontSize={"14px"}>مواد غذایی</Typography>
                     </Stack>
-                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("crops")} sx={{cursor:"pointer"}}>
+                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("crops")} sx={{ cursor: "pointer" }}>
                         <img className='mobile-category' src="/assets/image/mobilecategoryimage/2.png" alt="" />
                         <Typography fontSize={"14px"}>صیفی جات</Typography>
                     </Stack>
-                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("vegetable")} sx={{cursor:"pointer"}}>
+                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("vegetable")} sx={{ cursor: "pointer" }}>
                         <img className='mobile-category' src="/assets/image/mobilecategoryimage/3.png" alt="" />
                         <Typography fontSize={"14px"}>سبزیجات</Typography>
                     </Stack>
-                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("fruit")} sx={{cursor:"pointer"}}>
+                    <Stack alignItems={"center"} justifyContent={"center"} bgcolor={"white"} width={"25%"} p={1} borderRadius={"10px"} onClick={e => setCategory("fruit")} sx={{ cursor: "pointer" }}>
                         <img className='mobile-category' src="/assets/image/mobilecategoryimage/4.png" alt="" />
                         <Typography fontSize={"14px"}>میوه</Typography>
                     </Stack>
-                
-                 
-                    
+
+
+
                 </Stack>
                 <Stack>
                     <Stack flexDirection={"row"} flexWrap={"wrap"} gap={1} justifyContent={"center"} p={2}>
-                     
-                     {cards}
+                  {cards}
 
                     </Stack>
                 </Stack>
                 <Stack position={"fixed"} bottom={0} right={0} left={0}>
-                    <Button variant='contained' size='large' fullWidth sx={{bgcolor:"black",borderRadius:"0px", lineHeight:"50px"}}>ثبت سفارش</Button>
+                    <Button variant='contained' size='large' fullWidth sx={{ bgcolor: "black", borderRadius: "0px", lineHeight: "50px" }}>ثبت سفارش</Button>
                 </Stack>
 
             </Stack>
