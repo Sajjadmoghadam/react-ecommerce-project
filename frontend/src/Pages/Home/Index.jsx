@@ -2,7 +2,6 @@ import { InputAdornment, Stack, TextField, Typography, Button, Divider, Chip, Bo
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import LockIcon from '@mui/icons-material/Lock';
 import React, { useRef, useState ,useContext } from 'react';
-import AuthContext from '../../utils/AuthContext';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,6 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import './style.css'
 import Customers from '../../Components/Sliders/Customers/Index';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../Store/Slices/AuthSlice';
 
 
 
@@ -28,10 +29,10 @@ const Home = () => {
 
 
     }, [])
-    const {handleToken}=useContext(AuthContext)
 
     const [phoneNumber, setPhoneNumber] = useState('')
     const [password, setPassword] = useState('')
+    const dispatch=useDispatch()
     const handleLogin = () => {
         try{
             fetch('http://localhost:5000/auth', {
@@ -45,7 +46,7 @@ const Home = () => {
                 }) 
             })
             .then(res=>res.json())
-            .then(data=>handleToken(data.data.token))
+            .then(data=>dispatch(login(data.data.token)))
         }catch(err){
             console.log(err);
         }

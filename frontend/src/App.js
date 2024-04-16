@@ -14,59 +14,55 @@ import PageNotFound from './Pages/PageNotFound/Index';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import FAQ from './Pages/FAQ/Index';
 import Application from './Pages/Application/Index';
-import AuthContext from './utils/AuthContext';
-import { useState } from 'react';
 import Dashboard from './Pages/Dashboard/Index';
+import { useSelector } from 'react-redux';
 function App() {
 
-  
+
   const theme = createTheme({
-    palette:{
+    palette: {
       primary: {
-        main:"#009900"
+        main: "#009900"
       },
 
-      secondary:{
-        main:"#99cc00"
+      secondary: {
+        main: "#99cc00"
       }
     },
-    typography:{
-      fontFamily:'Yekan',
-      allVariants:{
-        color:'#000'
+    typography: {
+      fontFamily: 'Yekan',
+      allVariants: {
+        color: '#000'
       }
-  },
+    },
 
     direction: 'rtl'
   })
 
-  const [token ,setToken]=useState('2')
-  const handleToken=(e)=>{
-    setToken(e)
-  }
-  
+  const { token } = useSelector((state) => state.auth)
+
+
+
   return (
     <>
-      <CssBaseline/>
+      <CssBaseline />
       <ThemeProvider theme={theme}>
-      <AuthContext.Provider  value={{token,handleToken}} >
-      {token ? <LoginHeader /> : <Header />}
-      <Routes>
-        <Route exact path='/' element={token ? <Navigate to="/market" /> : <Home />} />
-        <Route path='/market' element={token ? <Market /> : <Navigate to="/" />} />
-        <Route path='/myprofile' element={token ? <MyProfile /> : <Navigate to="/" />} />
-        <Route path='/myrefund' element={token ? <MyRefund /> : < Navigate to="/" />} />
-        <Route path='/myWallet' element={token ? <MyWallet /> : < Navigate to="/" />} />
-        <Route path='/orders' element={token ? <Orders /> : < Navigate to="/" />} />
-        <Route path='/dashboard' element={token ? <Dashboard /> : < Navigate to="/" />} />
-        <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
-        <Route path='/tickets' element={token ? < Tickets />: < Navigate to="/" />} />
-        <Route path='/application' element={<Application/>} />
-        <Route path='/faq' element={<FAQ/>} />
-        <Route path='*' element ={<PageNotFound/>}/>
-      </Routes>
-      {token ? null : <Footer />}
-      </AuthContext.Provider>
+          {token ? <LoginHeader /> : <Header />}
+          <Routes>
+            <Route exact path='/' element={token ? <Navigate to="/market" /> : <Home />} />
+            <Route path='/market' element={token ? <Market /> : <Navigate to="/" />} />
+            <Route path='/myprofile' element={token ? <MyProfile /> : <Navigate to="/" />} />
+            <Route path='/myrefund' element={token ? <MyRefund /> : < Navigate to="/" />} />
+            <Route path='/myWallet' element={token ? <MyWallet /> : < Navigate to="/" />} />
+            <Route path='/orders' element={token ? <Orders /> : < Navigate to="/" />} />
+            <Route path='/dashboard' element={token ? <Dashboard /> : < Navigate to="/" />} />
+            <Route path='/tickets' element={token ? < Tickets /> : < Navigate to="/" />} />
+            <Route path='/tickets' element={token ? < Tickets /> : < Navigate to="/" />} />
+            <Route path='/application' element={<Application />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+          {token ? null : <Footer />}
       </ThemeProvider>
     </>
   );

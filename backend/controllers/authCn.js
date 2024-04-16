@@ -12,7 +12,7 @@ export const login = async(req,res)=>{
         if(!user){
             const hashedPassword = bcryptjs.hashSync(password,10);
             const newUser=await User.create({phonenumber:phoneNumber,password:hashedPassword});
-            const token = jwt.sign({id:newUser._id},process.env.JWT_SECRET)
+            const token = jwt.sign({id:newUser._id},"moghadam")
             const {password:hashPass,...userOthers}=newUser._doc
 
             return res.status(201).json({
@@ -29,7 +29,7 @@ export const login = async(req,res)=>{
                     message:'username or password incorrect'
                 })}
                 const {password:hashPass,...userOthers}=user._doc
-                const  token=jwt.sign({id:user._id},process.env.JWT_SECRET)
+                const  token=jwt.sign({id:user._id},"moghadam")
                 return res.status(200).json({
                  data:{
                      token,

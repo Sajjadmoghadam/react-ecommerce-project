@@ -1,7 +1,7 @@
 import app from "./app.js";
 import { config } from "dotenv";
 import mongoose from "mongoose";
-config()
+config({path:'./.env'})
 mongoose.connect(process.env.DATA_BASE).then(()=>console.log('DATA BASE IS CONNECTED'))
 
 

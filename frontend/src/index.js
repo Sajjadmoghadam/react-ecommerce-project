@@ -8,6 +8,8 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import { prefixer } from 'stylis';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
+import { Provider } from 'react-redux';
+import store from './Store/Index';
 const cacheRtl = createCache({
   key: 'muirtl',
   stylisPlugins: [prefixer, rtlPlugin],
@@ -18,7 +20,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <CacheProvider value={cacheRtl}>
+        <Provider store={store}>
         <App />
+        </Provider>
       </CacheProvider>
     </BrowserRouter>
   </React.StrictMode>
