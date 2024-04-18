@@ -7,9 +7,8 @@ import React from 'react'
 import { addItems, removeItems } from '../../Store/Slices/CartSlice';
 
 export default function Card({ product }) {
-    const prId = product._id
     const item = useSelector(state => state.cart.cartList).filter(e => {
-        if (e.id == product.id) {
+        if (e._id === product._id) {
             return true
         } else {
             return false
@@ -32,7 +31,7 @@ export default function Card({ product }) {
                             <Stack sx={{ bgcolor: "black" }} flexDirection={"row"} borderRadius={"10px"} alignItems={"center"}>
                                 <IconButton onClick={(e) => dispatch(addItems(product))}><AddBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
                                 <Typography textAlign={"center"} sx={{ backgroundColor: "white", width: "20px" }}>{item.quantity}</Typography>
-                                <IconButton onClick={(e) => dispatch(removeItems(product.id))}><IndeterminateCheckBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
+                                <IconButton onClick={(e) => dispatch(removeItems(product._id))}><IndeterminateCheckBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
                             </Stack>
                         }
                     </Stack>

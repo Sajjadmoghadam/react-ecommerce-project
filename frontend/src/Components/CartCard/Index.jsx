@@ -4,7 +4,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import { addItems, removeItems } from '../../Store/Slices/CartSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 const CartCard = ({product}) => {
@@ -23,7 +23,7 @@ const CartCard = ({product}) => {
                         <Stack sx={{ bgcolor: "black" }} flexDirection={"row"} borderRadius={"10px"} alignItems={"center"}>
                         <IconButton onClick={(e) => dispatch(addItems(product))}><AddBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
                                 <Typography textAlign={"center"} sx={{ backgroundColor: "white", width: "20px" }}>{product.quantity}</Typography>
-                                <IconButton onClick={(e) => dispatch(removeItems(product.id))}><IndeterminateCheckBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
+                                <IconButton onClick={(e) => dispatch(removeItems(product._id))}><IndeterminateCheckBoxIcon sx={{ color: "white" }} fontSize='small' /></IconButton>
                         </Stack>
                         <Typography className='login-span'>{product.price} تومان</Typography>
                     </Stack>

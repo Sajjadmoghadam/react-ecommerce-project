@@ -8,7 +8,7 @@ const cartSlice = createSlice({
     reducers: {
         removeItems: (state, action) => {
             state.cartList = state.cartList.filter((e) => {
-                if (e.id === action.payload) {
+                if (e._id === action.payload) {
                     if (e.quantity > 1) {
                         e.quantity = e.quantity - 1
                         return e
@@ -30,7 +30,7 @@ const cartSlice = createSlice({
             
             }else{
                 state.cartList=state.cartList.map((e)=>{
-                    if(e.id===action.payload.id){
+                    if(e._id===action.payload._id){
                         e.quantity=e.quantity+1
                         addItems=true
                         return e
